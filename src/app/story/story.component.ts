@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { StoriesService } from '../services/stories.service';
 import { Story } from '../services/story';
 
@@ -8,6 +8,9 @@ import { Story } from '../services/story';
   styleUrls: ['./story.component.css']
 })
 export class StoryComponent implements OnInit {
+
+  @Input() id: string;
+  @Input() name: string;
 
   public stories: Story[];
 

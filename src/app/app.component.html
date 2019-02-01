@@ -15,21 +15,21 @@
     <tbody>
       <tr *ngFor="let story of stories">
         <td class="no-border no-border-top">
-          <app-story></app-story>
+          <app-story id="{{story.id}}" name="{{story.name}}"></app-story>
         </td>
         <td class="no-border-top">
           <div *ngFor="let task of story.tasks">
-            <app-task *ngIf="task.state == 'not-started'"></app-task>
+            <app-task *ngIf="task.state == 'not-started'" id="{{task.id}}" name="{{task.name}}"></app-task>
           </div>
         </td>
         <td class="no-border-top">
           <div *ngFor="let task of story.tasks">
-            <app-task *ngIf="task.state == 'in-progress'"></app-task>
+            <app-task *ngIf="task.state == 'in-progress'" id="{{task.id}}" name="{{task.name}}"></app-task>
           </div>
         </td>
         <td class="no-border-top">
           <div *ngFor="let task of story.tasks">
-            <app-task *ngIf="task.state == 'done'"></app-task>
+            <app-task *ngIf="task.state == 'done'" id="{{task.id}}" name="{{task.name}}"></app-task>
           </div>
         </td>
       </tr>
