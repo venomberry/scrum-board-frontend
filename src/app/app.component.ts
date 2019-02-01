@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { StoriesService } from './services/stories.service';
+import { Story } from './services/story';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'scrum-board-frontend';
+
+  public stories: Story[];
+
+  constructor(private storiesService: StoriesService) {
+    this.stories = storiesService.stories;
+  }
 }

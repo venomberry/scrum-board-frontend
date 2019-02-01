@@ -1,0 +1,22 @@
+table { 
+    width:100%;
+    border-collapse: collapse;
+    border: 0px;
+} 
+
+table thead tr td { width:25%; } 
+
+td, th {
+    border-left: 1px solid black;
+}
+
+.no-border {
+    border-left-width: 0px;
+}
+
+.no-border-top {
+    border-top-width: 0px;
+}
+.border-bottom {
+    border-bottom: 1px solid black;
+}

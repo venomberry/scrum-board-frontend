@@ -1,0 +1,15 @@
+.story {
+    height: 50px;
+    width: 175px;
+    padding: 5px;
+    background-color: #9fdaed;
+    border: 1px solid #000;
+    margin: auto;
+}
+span {
+    float: left;
+}
+input {
+    float: left;
+    width: 90px;
+}

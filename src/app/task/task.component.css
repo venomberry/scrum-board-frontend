@@ -1,0 +1,16 @@
+.task {
+    height: 50px;
+    width: 100px;
+    padding: 5px;
+    background-color: #f7f0b0;
+    border: 1px solid #000;
+    margin: 5px;
+    float: left;
+}
+span {
+    float: left;
+}
+input {
+    float: left;
+    width: 50px;
+}
