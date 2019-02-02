@@ -19,30 +19,26 @@
         </td>
         <td class="no-border-top">
           <div *ngFor="let task of story.tasks">
-            <app-task *ngIf="task.state == 'not-started'" id="{{task.id}}" name="{{task.name}}"></app-task>
+            <app-task *ngIf="task.state == 'not-started'" id="{{task.id}}" name="{{task.name}}" (click)="log(task)"></app-task>
           </div>
         </td>
         <td class="no-border-top">
           <div *ngFor="let task of story.tasks">
-            <app-task *ngIf="task.state == 'in-progress'" id="{{task.id}}" name="{{task.name}}"></app-task>
+            <app-task *ngIf="task.state == 'in-progress'" id="{{task.id}}" name="{{task.name}}" (click)="log(task)"></app-task>
           </div>
         </td>
         <td class="no-border-top">
           <div *ngFor="let task of story.tasks">
-            <app-task *ngIf="task.state == 'done'" id="{{task.id}}" name="{{task.name}}"></app-task>
+            <app-task *ngIf="task.state == 'done'" id="{{task.id}}" name="{{task.name}}" (click)="log(task)"></app-task>
           </div>
         </td>
       </tr>
-      <!-- <tr>
-        <td class="no-border no-border-top">
-          <app-story></app-story>
-        </td>
-        <td class="no-border-top">
-          <app-task></app-task>
-        </td>
-        <td class="no-border-top"></td>
-        <td class="no-border-top"></td>
-      </tr> -->
     </tbody>
   </table>
+  <hr />
+  <p>id: {{chosenTask.id}}</p>
+  <p>name: {{chosenTask.name}}</p>
+  <p>state: {{chosenTask.state}}</p>
+  <button *ngIf="chosenTask.state == 'not-started'">Move to in progress</button>
+  <button *ngIf="chosenTask.state == 'in-progress'">Move to done</button>
 </div>
