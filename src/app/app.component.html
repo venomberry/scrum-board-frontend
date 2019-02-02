@@ -39,6 +39,6 @@
   <p>id: {{chosenTask.id}}</p>
   <p>name: {{chosenTask.name}}</p>
   <p>state: {{chosenTask.state}}</p>
-  <button *ngIf="chosenTask.state == 'not-started'">Move to in progress</button>
-  <button *ngIf="chosenTask.state == 'in-progress'">Move to done</button>
+  <button *ngIf="chosenTask.state == 'not-started'" (click)="moveToProgress(chosenTask)">Move to in progress</button>
+  <button *ngIf="chosenTask.state == 'in-progress'" (click)="moveToDone(chosenTask)">Move to done</button>
 </div>

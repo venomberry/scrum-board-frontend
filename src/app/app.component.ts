@@ -16,15 +16,23 @@ export class AppComponent {
 
   constructor(private storiesService: StoriesService) {
     this.stories = storiesService.stories;
-    this.chosenTask = {};
-    this.chosenTask.id = null;
-    this.chosenTask.name = '';
-    this.chosenTask.state = '';
+    this.chosenTask = { id: null, name: '', state: ''};
+    // this.chosenTask.id = null;
+    // this.chosenTask.name = '';
+    // this.chosenTask.state = '';
 
   }
 
   log(task: Task) {
     console.log(task);
     this.chosenTask = task;
+  }
+
+  moveToProgress(chosenTask: Task) {
+    this.chosenTask.state = 'in-progress';
+  }
+
+  moveToDone(chosenTask: Task) {
+    this.chosenTask.state = 'done';
   }
 }
