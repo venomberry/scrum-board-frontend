@@ -1,4 +1,4 @@
 export const CONFIG = {
-    BASE_URL: '',
+    BASE_URL: 'http://localhost:8888',
     API: '/API'
 };

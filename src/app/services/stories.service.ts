@@ -8,7 +8,7 @@ import { Story } from './story';
 })
 export class StoriesService {
 
-  public stories: Story[];
+  public stories: Story[] = [];
 
   constructor(private http: HttpClient) {
     this._initStories();
@@ -17,7 +17,8 @@ export class StoriesService {
   }
 
   _initStories() {
-    this.stories = [
+    // Au cas ou l'application node ne marche pas, tu peux essayer avec ce mock
+    /*this.stories = [
       {
         id: 1, name: 'Story1',
         tasks: [
@@ -46,10 +47,11 @@ export class StoriesService {
           { id: 11, name: 'Task2', state: 'in-progress' },
           { id: 12, name: 'Task3', state: 'done' }]
       }
-    ];
-    this.http.get<any>(CONFIG.BASE_URL + CONFIG.API).subscribe((data) => {
-      console.log('data: ', data);
-      // this.stories = data;
+    ];*/
+    this.http.get(CONFIG.BASE_URL + '/stories').subscribe((data) => {
+      for (let index = 0; index < Object.keys(data).length; index++) {
+        this.stories.push(data[index]);
+      }
     });
   }
 
