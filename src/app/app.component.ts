@@ -17,10 +17,6 @@ export class AppComponent {
   constructor(private storiesService: StoriesService) {
     this.stories = storiesService.stories;
     this.chosenTask = { id: null, name: '', state: ''};
-    // this.chosenTask.id = null;
-    // this.chosenTask.name = '';
-    // this.chosenTask.state = '';
-
   }
 
   log(task: Task) {
